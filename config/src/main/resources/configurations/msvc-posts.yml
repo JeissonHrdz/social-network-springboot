@@ -9,9 +9,7 @@ spring:
     url: jdbc:mysql://localhost:3306/redsocialdb
     username: root
     password: 1234
-  jpa:
-    hibernate:
-      ddl-auto: create
+  jpa:  
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
 eureka:
