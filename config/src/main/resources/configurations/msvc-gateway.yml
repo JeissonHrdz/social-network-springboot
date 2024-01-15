@@ -19,7 +19,7 @@ spring:
         - id: comments
           uri: http://localhost:8090
           predicates:
-          - Path=/api/comments/**
+          - Path=/api/posts/*/comments/**
         - id: posts
           uri: http://localhost:8050
           predicates:
