@@ -31,7 +31,7 @@ public class CommentServiceImpl implements ICommentService {
 
     @Override
     public List<Comment> showAll(Integer idPost) {
-        return (List) commentDao.findAllCommentsPost(idPost);
+        return (List) commentDao.findAllByIdPost(idPost);
 
     }
 

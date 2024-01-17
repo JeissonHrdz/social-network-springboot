@@ -18,6 +18,8 @@ import com.redsocial.users.users.Model.Entity.User;
 import com.redsocial.users.users.Model.Payload.MessageResponse;
 import com.redsocial.users.users.Service.IUserService;
 
+
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -78,5 +80,11 @@ public class UserController {
                 HttpStatus.OK);
 
     }
+
+    @GetMapping("/posts-user/{idUser}")
+    public ResponseEntity<?> findPostsByIdUser(@PathVariable Integer idUser) {
+        return ResponseEntity.ok(userService.findPostByIdUser(idUser));
+    }
+    
 
 }

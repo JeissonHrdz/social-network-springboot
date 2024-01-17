@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.redsocial.posts.posts.Exception.ResourceNotFoundException;
 import com.redsocial.posts.posts.Model.Dto.PostDto;
 import com.redsocial.posts.posts.Model.Entity.Post;
 import com.redsocial.posts.posts.Model.Payload.MessageResponse;
 import com.redsocial.posts.posts.Service.IPostService;
+
 
 @RestController
 @RequestMapping("/api/posts")
@@ -86,5 +85,11 @@ public class PostController {
                     HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/posts-user/{idUser}")
+    public  ResponseEntity<?> findByIdUser(@PathVariable Integer idUser) {
+        return ResponseEntity.ok(postService.findByIdUser(idUser));
+    }
+    
 
 }

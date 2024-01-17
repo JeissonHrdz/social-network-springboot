@@ -53,7 +53,7 @@ public class CommentController {
 
         }
     }
-    @GetMapping("/{idPost}")
+    @GetMapping
     public ResponseEntity<?> showAll(@PathVariable Integer idPost){
              List<Comment> getComments = commentService.showAll(idPost);
         if (getComments == null || getComments.isEmpty()) {

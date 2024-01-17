@@ -41,6 +41,11 @@ public class PostServiceImpl implements IPostService {
     public Post findById(Integer id) {
         return postDao.findById(id).orElse(null);
     }
+
+    @Override
+    public List<Post> findByIdUser(Integer idUser) {
+        return postDao.findAllByIdUser(idUser);
+    }
  
 
 }

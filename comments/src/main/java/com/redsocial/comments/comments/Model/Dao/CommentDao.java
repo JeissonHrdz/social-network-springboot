@@ -8,7 +8,7 @@ import com.redsocial.comments.comments.Model.Entity.Comment;
 
 public interface CommentDao extends CrudRepository<Comment, Integer> {
 
-    @Query("SELECT s FROM comment WHERE s.id_post = :idPost")
-    List<Comment> findAllCommentsPost(Integer idPost);
+    @Query("SELECT s FROM Comment s WHERE s.idPost = :idPost")
+    List<Comment> findAllByIdPost(Integer idPost);
     
 }

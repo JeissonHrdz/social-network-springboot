@@ -11,4 +11,5 @@ public interface IPostService {
     List<Post> showAll();    
     void delete(Post post);
     Post findById(Integer id);
+    List<Post> findByIdUser(Integer idUser);
 }
